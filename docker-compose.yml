@@ -7,23 +7,31 @@ services:
       - mongo-data:/data/db
 
   backend:
-    image: ankitks001/dd-mean-backend:1.0
+    image: ankitks001/dd-mean-backend:latest
     container_name: backend
     restart: always
-    ports:
-      - "8080:8080"
     environment:
       - MONGO_URL=mongodb://mongo:27017/dd_db
     depends_on:
       - mongo
 
   frontend:
-    image: ankitks001/dd-mean-frontend:1.0
+    image: ankitks001/dd-mean-frontend:latest
     container_name: frontend
     restart: always
-    ports:
-      - "8081:80"
     depends_on:
+      - backend
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - frontend
       - backend
 
 volumes:

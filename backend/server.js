@@ -4,12 +4,7 @@ const cors = require("cors");
 const app = express();
 
 //CORS config FIRST
-app.use(cors({
-  origin: "http://localhost:8081",
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type"]
-}));
-
+app.use(cors());
 app.options("*", cors()); // handle preflight
 
 app.use(express.json());
