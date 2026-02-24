@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
   mongo:
     image: mongo:6
@@ -9,7 +7,7 @@ services:
       - mongo-data:/data/db
 
   backend:
-    build: ./backend
+    image: ankitks001/dd-mean-backend:1.0
     container_name: backend
     restart: always
     ports:
@@ -20,7 +18,7 @@ services:
       - mongo
 
   frontend:
-    build: ./frontend
+    image: ankitks001/dd-mean-frontend:1.0
     container_name: frontend
     restart: always
     ports:
