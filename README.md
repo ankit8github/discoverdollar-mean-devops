@@ -276,7 +276,7 @@ http://localhost
 # 👨‍💻 Author
 
 Ankit Kashyap
-DevOps & AI Engineering Enthusiast
+Data Scientist and aspiring AI Engineer
 
 ---
 
