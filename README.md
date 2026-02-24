@@ -140,7 +140,7 @@ This ensures:
 Application accessible via:
 
 ```
-http://<http://13.210.225.46>
+ http://13.210.225.46
 ```
 
 ---
